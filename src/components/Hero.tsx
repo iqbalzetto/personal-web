@@ -45,15 +45,7 @@ const Hero = () => {
               Get In Touch
             </Button>
             
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-              onClick={() => document.querySelector('#blog')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <FileText className="mr-2 h-5 w-5" />
-              Read My Blog
-            </Button>
+            
           </div>
 
           {/* Social Links */}
@@ -75,7 +67,7 @@ const Hero = () => {
               <Linkedin size={24} />
             </a>
             <a 
-              href="mailto:mohammad.iqbal@example.com" 
+              href="mailto:iqbalzetto@gmail.com" 
               className="text-muted-foreground hover:text-primary transition-colors duration-200 hover:animate-pulse"
             >
               <Mail size={24} />

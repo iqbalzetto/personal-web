@@ -15,15 +15,7 @@ const Contact = () => {
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Here you would typically handle the form submission
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out! I'll get back to you soon.",
-    });
-    setFormData({ name: '', email: '', message: '' });
-  };
+  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -36,8 +28,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "mohammad.iqbal@example.com",
-      href: "mailto:mohammad.iqbal@example.com"
+      value: "iqbalzetto@gmail.com",
+      href: "mailto:iqbalzetto@gmail.com"
     },
     {
       icon: Github,
@@ -82,83 +74,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <Card className="bg-card/50 backdrop-blur-sm border-border">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-foreground flex items-center">
-                    <Coffee className="mr-3 text-primary" size={24} />
-                    Let's have a chat
-                  </CardTitle>
-                  <p className="text-muted-foreground">
-                    Drop me a message and I'll get back to you as soon as possible!
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                          Name
-                        </label>
-                        <Input
-                          id="name"
-                          name="name"
-                          type="text"
-                          value={formData.name}
-                          onChange={handleChange}
-                          placeholder="Your name"
-                          required
-                          className="bg-background/50 border-border focus:border-primary"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                          Email
-                        </label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="your.email@example.com"
-                          required
-                          className="bg-background/50 border-border focus:border-primary"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                        Message
-                      </label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="Tell me about your project, opportunity, or just say hi!"
-                        rows={6}
-                        required
-                        className="bg-background/50 border-border focus:border-primary resize-none"
-                      />
-                    </div>
-                    <Button 
-                      type="submit"
-                      className="w-full neon-glow hover:neon-glow-strong transition-all duration-300 group"
-                      size="lg"
-                    >
-                      <Send className="mr-2 h-5 w-5 group-hover:animate-pulse" />
-                      Send Message
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Contact Info & Availability */}
-            <div className="space-y-8">
+          <div className="grid lg:grid-cols-2 gap-8">
               {/* Contact Information */}
               <Card className="bg-card/50 backdrop-blur-sm border-border">
                 <CardHeader>
@@ -221,7 +137,6 @@ const Contact = () => {
                   </div>
                 </CardContent>
               </Card>
-            </div>
           </div>
         </div>
       </div>
