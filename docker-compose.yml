@@ -1,0 +1,26 @@
+services:
+  # Aplikasi Web Anda
+  my-web-app:
+    image: ghcr.io/iqbalzetto/personal-web:latest
+    platform: linux/amd64
+    container_name: personal-web-app
+    ports:
+      - "3000:80" # Sesuaikan port aplikasi Anda (kiri: host, kanan: container)
+    restart: always
+
+  # Si Penjaga Otomatis (Watchtower)
+  watchtower:
+    image: containrrr/watchtower:latest
+    platform: linux/amd64
+    container_name: watchtower
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      # Kredensial untuk akses GHCR
+      - REPO_USER=${GITHUB_USER}
+      - REPO_PASS=${GITHUB_PAT}
+      # Pengaturan Watchtower
+      - WATCHTOWER_POLL_INTERVAL=30 # Cek setiap 60 detik
+      - WATCHTOWER_CLEANUP=true      # Hapus image lama agar SSD Mac tidak penuh
+      - WATCHTOWER_LABEL_ENABLE=false # Memantau semua container yang running
