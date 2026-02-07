@@ -6,6 +6,9 @@ services:
     container_name: personal-web-app
     ports:
       - "3000:80" # Sesuaikan port aplikasi Anda (kiri: host, kanan: container)
+    labels:
+      # Baris sakti: Memberitahu Watchtower untuk memantau kontainer ini
+      - "com.centurylinklabs.watchtower.enable=true"
     restart: always
 
   # Si Penjaga Otomatis (Watchtower)
@@ -23,4 +26,4 @@ services:
       # Pengaturan Watchtower
       - WATCHTOWER_POLL_INTERVAL=30 # Cek setiap 60 detik
       - WATCHTOWER_CLEANUP=true      # Hapus image lama agar SSD Mac tidak penuh
-      - WATCHTOWER_LABEL_ENABLE=false # Memantau semua container yang running
+      - WATCHTOWER_LABEL_ENABLE=true # Memantau semua container yang running

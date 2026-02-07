@@ -16,7 +16,7 @@ const Hero = () => {
           {/* Name */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="text-foreground">Mohammad</span>{" "}
-            <span className="gradient-text text-glow glitch">Iqbalzetto</span>
+            <span className="gradient-text text-glow glitch">Iqbalzettokakadidot</span>
           </h1>
 
           {/* Nickname */}
